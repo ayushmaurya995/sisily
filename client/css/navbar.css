@@ -1,0 +1,361 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:999;
+
+    transition:.4s ease;
+
+}
+
+/* Background added by JS while scrolling */
+header.scrolled{
+
+    background:rgba(255,253,252,.92);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 30px rgba(63,35,77,.08);
+    border-bottom:1px solid rgba(183,142,219,.12);
+
+}
+
+/* ========================= */
+
+.navbar{
+
+    max-width:1280px;
+
+    margin:auto;
+
+    height:92px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo a{
+
+    display:flex;
+    align-items:center;
+    width:158px;
+    height:68px;
+    transition:.3s;
+
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.logo a:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.nav-links{
+
+    display:flex;
+
+    gap:38px;
+
+    align-items:center;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-links a{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+/* Underline Animation */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ========================= */
+/* ICONS */
+/* ========================= */
+
+.nav-icons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.nav-icons i{
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-icons i:hover{
+
+    color:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+/* ========================= */
+/* LOGIN BUTTON */
+/* ========================= */
+
+.login-btn{
+
+    padding:11px 24px;
+
+    border-radius:40px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.login-btn:hover{
+
+    background:#9e6ec8;
+
+    transform:translateY(-3px);
+
+}
+
+/* ========================= */
+/* SHOPPING CART BADGE */
+/* ========================= */
+
+.cart-icon{
+
+    position:relative;
+
+}
+
+.cart-count{
+
+    position:absolute;
+
+    top:-10px;
+
+    right:-10px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ========================= */
+/* SEARCH HOVER */
+/* ========================= */
+
+.search-icon{
+
+    transition:.35s;
+
+}
+
+.search-icon:hover{
+
+    transform:rotate(90deg);
+
+}
+
+/* ========================= */
+/* MOBILE MENU */
+/* ========================= */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+}
+
+/* ========================= */
+/* MOBILE NAVIGATION */
+/* ========================= */
+
+@media(max-width:992px){
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:90px;
+
+        left:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        background:white;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        align-items:flex-start;
+
+        padding:40px 35px;
+
+        gap:30px;
+
+        transition:.4s;
+
+        box-shadow:10px 0 25px rgba(0,0,0,.08);
+
+    }
+
+    .nav-links.active{
+
+        left:0;
+
+    }
+
+}
+
+/* ========================= */
+/* SMALL DEVICES */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        height:80px;
+
+        padding:0 20px;
+
+    }
+
+    .logo a{
+
+        width:132px;
+        height:58px;
+
+    }
+
+    .nav-icons{
+
+        gap:16px;
+
+    }
+
+    .login-btn{
+
+        display:none;
+
+    }
+
+}
